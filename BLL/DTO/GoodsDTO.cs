@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
+using BLL.Mapper;
+using DAL.Entities;
+using DAL.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,14 +25,15 @@ namespace BLL.DTO
                 .ForMember(d => d.Description, opt => opt.MapFrom(src => src.Description))
                 .ForMember(d => d.Volume, opt => opt.MapFrom(src => src.Volume))
                 .ForMember(d => d.Toxicity, opt => opt.MapFrom(src => src.Toxicity))
-                .ForMember(d => d.DateOfMan, opt => opt.MapFrom(src => src.DateInfo.DateOfMan))
-                .ForMember(d => d.DateOfExpire, opt => opt.MapFrom(src => src.DateInfo.DateOfExpire))
+                .ForMember(d => d.DateOfMan, opt => opt.MapFrom(src => src.ValidityDate.DateOfMan))
+                .ForMember(d => d.DateOfExpire, opt => opt.MapFrom(src => src.ValidityDate.DateOfExpire))
                 .ReverseMap()
                 .ForPath(s => s.Title, opt => opt.MapFrom(src => src.Title))
                 .ForPath(s => s.Description, opt => opt.MapFrom(src => src.Description))
                 .ForPath(s => s.Volume, opt => opt.MapFrom(src => src.Volume))
                 .ForPath(s => s.Toxicity, opt => opt.MapFrom(src => src.Toxicity))
-                .ForPath(s => s.DateInfo.DateOfMan, opt => opt.MapFrom(src => src.DateOfMan))
-                .ForPath(s => s.DateInfo.DateOfExpire, opt => opt.MapFrom(src => src.DateOfExpire));
+                .ForPath(s => s.ValidityDate.DateOfMan, opt => opt.MapFrom(src => src.DateOfMan))
+                .ForPath(s => s.ValidityDate.DateOfExpire, opt => opt.MapFrom(src => src.DateOfExpire));
         }
     }
+}

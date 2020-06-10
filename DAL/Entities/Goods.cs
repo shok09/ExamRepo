@@ -12,6 +12,6 @@ namespace DAL.Entities
         public int Volume { get; set; }
         public string Description { get; set; }
         public ToxicityLevel Toxicity { get; set; }
-        public DateInfo ValidityDate { get; set; }
+        public virtual DateInfo ValidityDate { get; set; }
     }
 }

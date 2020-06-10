@@ -8,9 +8,8 @@ namespace BLL.Services.Interfaces
 {
     public interface IGoodsService
     {
-        Task AssignRoomAsync(RoomDTO RoomDTO, GoodsDTO goods);
+        Task AssignRoomAsync(RoomDTO roomDTO, GoodsDTO goodsDTO);
         Task CreateGoodsAsync(GoodsDTO goodsDTO);
         Task ChangeDesriptionAsync(GoodsDTO goodsDTO, string description);
-        Task ChangeToxicityAsync(GoodsDTO goodsDTO);
     }
 }

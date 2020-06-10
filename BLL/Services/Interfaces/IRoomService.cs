@@ -8,7 +8,6 @@ namespace BLL.Services.Interfaces
 {
     public interface IRoomService
     {
-        
         Task ChangeToxicityAsync(RoomDTO roomDTO);
         Task CreateRoomAsync(RoomDTO roomDTO);
         Task DeleteRoomAsync(RoomDTO roomDTO);
